@@ -1,7 +1,6 @@
-angular.module('hellosolarsystem').component('test',{
-  	templateUrl: 'test/test.html',
-
-  	controller: function($scope, $state, $stateParams) {
+angular.module('hellosolarsystem').component('confirm', {
+  templateUrl:  'confirm/confirm.html',
+  controller: function($scope, $state, $stateParams) {
   		var receivedName = $stateParams.value1;
   		// alert(receivedName);
   		console.log(receivedName);
@@ -15,5 +14,11 @@ angular.module('hellosolarsystem').component('test',{
 
       	console.log($stateParams.value3);
   		console.log($stateParams.value4);
+
+  		$scope.value5 = Date();
+
+  		$scope.submit4 = function(){
+  			$state.go('success');
+  		}
   }
 })

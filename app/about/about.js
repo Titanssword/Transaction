@@ -11,5 +11,22 @@ angular.module('hellosolarsystem').component('about', {
 
   		console.log($stateParams.value1);
   		console.log($stateParams.value2);
+
+      $scope.submit3 = function (){
+        //alert("haha");
+        $scope.user = {
+        "username":$scope.value1,
+        "password":$scope.value2,
+        "transout":$scope.transout,
+        "money":$scope.money
+      };
+
+      console.log("submit3的信息");
+      console.log($scope.user.username);
+      console.log($scope.user.username);
+      console.log($scope.user.username);
+      console.log($scope.user.username);
+      $state.go('confirm',{value1:$scope.user.username,value2:$scope.user.password,value3:$scope.user.transout,value4:$scope.user.money});
+    }
   }
 })

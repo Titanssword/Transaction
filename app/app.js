@@ -20,8 +20,19 @@ myApp.config(function($stateProvider) {
     {
       name: 'about',
       url: '/about/:value1/:value2',
-      component: 'about',
+      component: 'about'
       //params:{'args':{}}
+    },
+    {
+      name: 'success',
+      url: '/success',
+      component: 'success'
+    },
+
+    {
+      name: 'confirm',
+      url: '/confirm/:value1/:value2/:value3/:value4',
+      component: 'confirm'
     },
     
     { 
@@ -75,7 +86,7 @@ myApp.config(function($stateProvider) {
     },
     {
     	name: 'test',
-    	url: '/test/test',
+    	url: '/test/test/:value1/:value2/:value3/:value4',
     	component: 'test',
       params:{'username':{}}
     }
