@@ -32,7 +32,12 @@ myApp.config(function($stateProvider) {
     {
       name: 'confirm',
       url: '/confirm/:value1/:value2/:value3/:value4',
-      component: 'confirm'
+      component: 'confirm',
+      resolve:{
+        message:function(MoneyService){
+          return MoneyService.getAllMoney();
+        }
+      }
     },
     
     { 
@@ -86,9 +91,19 @@ myApp.config(function($stateProvider) {
     },
     {
     	name: 'test',
-    	url: '/test/test/:value1/:value2/:value3/:value4',
-    	component: 'test',
-      params:{'username':{}}
+    	url: '/test/test/',
+    	component: 'test'
+      
+    },
+    {
+      name: 'filter',
+      url: '/filter',
+      component: 'filter',
+      resolve:{
+        phone: function(productData){
+          return productData.getPhone();
+        }
+      }
     }
   ]
   
